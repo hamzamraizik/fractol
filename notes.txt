@@ -19,5 +19,5 @@ t_complex squar_complex(t_complex z)
 
 /*
 
-
+put pixels to img and then to the window !!
 */

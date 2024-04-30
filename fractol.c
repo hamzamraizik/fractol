@@ -16,15 +16,10 @@ int main(int ac, char *av[])
         fractal.name = av[1];
         puts("good!");
         fractal_init(&fractal);
-        // fractal_render(&fractal);
+        fractal_render(&fractal);
         //
         //
         mlx_loop(fractal.mlx_connection); // loop keep listening to any action from user
-
-
-
-
-
 
         // mlx = mlx_init();
         // win = mlx_new_window(mlx, 800, 600, "the first window");
