@@ -2,7 +2,7 @@ CFILES = fractol.c init.c math_utils.c render.c
 OFILES = $(CFILES:.c=.o)
 NAME = fractol
 CC = cc
-CFLAGS = -Wall -Wextra 
+CFLAGS = -Wall -Wextra -lmlx -framework OpenGL -framework AppKit
 
 all: $(NAME)
 

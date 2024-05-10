@@ -1,33 +1,28 @@
 
 #include "fractol.h"
 
-int handle_input(int key, void *param)
+#define KEY_PRESS_EVENT 2
+#define KEY_PRESS_MASK (1L << 0)
+
+int	handle_events(int key, t_fractal *fractal)
 {
-    // mlx_destroy_window(mlx, win);  // handle the input on the keycode.
-    return(0);
+	// printf("%d/n", key);
+	exit(1);
+	return 0;
 }
 
 int main(int ac, char *av[])
 {
-    t_fractal fractal;
+	t_fractal fractal;
 
-    if (ac == 2 && !strncmp(av[1], "mandelbrot", 10))
-    {
-        fractal.name = av[1];
-        puts("good!");
-        fractal_init(&fractal);
-        fractal_render(&fractal);
-        //
-        //
-        mlx_loop(fractal.mlx_connection); // loop keep listening to any action from user
-
-        // mlx = mlx_init();
-        // win = mlx_new_window(mlx, 800, 600, "the first window");
-
-        // mlx_key_hook(win, handle_input, NULL);
-        //
-        // mlx_loop(mlx);  // wait for events.
-        // mlx_get_data_addr();
-        return 0;
-    }
+	if (ac == 2 && !strncmp(av[1], "mandelbrot", 11))
+	{
+		fractal.name = av[1];
+		puts("good!");
+		fractal_init(&fractal);
+		fractal_render(&fractal);
+		mlx_loop(fractal.mlx_connection);
+		mlx_hook(&fractal.mlx_window, 02, 0, (int (*)())handle_events, &fractal);
+		return 0;
+	}
 }

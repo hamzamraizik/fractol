@@ -11,8 +11,6 @@
 #define WIDTH 800
 #define HEIGHT 800
 
-
-
 //
 #define BLACK       0x000000  // RGB(0, 0, 0)
 #define WHITE       0xFFFFFF  // RGB(255, 255, 255)
@@ -39,10 +37,11 @@ typedef struct s_complex
 	double  y;
 }       t_complex;
 
+
 typedef struct s_img
 {
-	void    *img_ptr; // pointer to img struct.
-	char    *pixels_ptr; // points to the actual pixels "points to one byte"
+	void    *img_ptr;
+	char    *pixels_ptr;
 	int     bpp;
 	int     endian;
 	int     line_len;
@@ -50,16 +49,14 @@ typedef struct s_img
 
 typedef struct s_fractal
 {
-	char *name;
-	//MLX
-	void    *mlx_connection; // mlx_init()
-	void    *mlx_window; //mlx_new_window
-	//IMG
+	char	*name;
+	void    *mlx_connection;
+	void    *mlx_window;
 	t_img   img;
 	double	escape_value;
 	int		iteration_definition;
-	//Hooks member variables
 }       t_fractal;
+
 void fractal_init(t_fractal *fractal);
 double  map(double unscaled_num, double new_min, double new_max, double old_min, double old_max);
 t_complex squar_complex(t_complex z);
