@@ -5,10 +5,12 @@ void error(void)
 	write(2, "Error\n", 6);
 	exit(1);
 }
-//INIT
 
 void fractal_init(t_fractal *fractal)
 {
+	t_img	img;
+
+	fractal->img = img;
 	fractal->mlx_connection = mlx_init();
 	if (!fractal->mlx_connection)
 		error();

@@ -55,6 +55,9 @@ typedef struct s_fractal
 	t_img   img;
 	double	escape_value;
 	int		iteration_definition;
+	double	x_shift;
+	double	y_shift;
+	double		zoom;
 }       t_fractal;
 
 void fractal_init(t_fractal *fractal);

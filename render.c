@@ -20,12 +20,10 @@ void handle_pixel(int x, int y, t_fractal *fractal)
 	z.x = 0.0;
 	z.y = 0.0;
 
-	c.x = map(x, -2, +2, 0, WIDTH);
-	c.y = map(y, +2, -2, 0, HEIGHT);
+	c.x = (map(x, -2, +2, 0, WIDTH) * fractal->zoom) + fractal->x_shift;
+	c.y = (map(y, +2, -2, 0, HEIGHT) * fractal->zoom) + fractal->y_shift;
 
-	//how many times you want to iteration  to check 
-				//if the point escaped
-	fractal->iteration_definition = 1000;
+	fractal->iteration_definition = 100;
 	fractal->escape_value = 4;
 	while (i < fractal->iteration_definition)
 	{
