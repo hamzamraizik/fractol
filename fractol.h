@@ -57,13 +57,17 @@ typedef struct s_fractal
 	int		iteration_definition;
 	double	x_shift;
 	double	y_shift;
-	double		zoom;
+	double	zoom;
+	double	julia_x;
+	double	julia_y;
 }       t_fractal;
 
-void fractal_init(t_fractal *fractal);
-double  map(double unscaled_num, double new_min, double new_max, double old_min, double old_max);
-t_complex squar_complex(t_complex z);
-t_complex sum_complex(t_complex nb1, t_complex nb2);
-void fractal_render(t_fractal *fractal);
+void 		fractal_init(t_fractal *fractal);
+double 		map(double unscaled_num, double new_min, double new_max, double old_min, double old_max);
+t_complex	squar_complex(t_complex z);
+t_complex	sum_complex(t_complex nb1, t_complex nb2);
+void		fractal_render(t_fractal *fractal);
+double		atof(const char *str);
+void		julia_render(t_fractal *fractal);
 
 #endif
