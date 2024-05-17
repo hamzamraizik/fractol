@@ -8,7 +8,7 @@ CFLAGS2 = -lmlx -framework OpenGL -framework AppKit -O3
 all: $(NAME)
 
 %.o: %.c fractol.h
-	$(CC) $(CFLAGS1) -c $< -o
+	$(CC) $(CFLAGS1) -c $<
 
 $(NAME): $(OFILES)
 	$(CC) $(CFLAGS2) -o $(NAME) $(OFILES)

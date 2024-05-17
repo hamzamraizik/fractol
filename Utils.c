@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hmraizik <hmraizik@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/16 16:53:09 by hmraizik          #+#    #+#             */
+/*   Updated: 2024/05/17 21:09:57 by hmraizik         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 double	ft_atof(const char *str, double result, int sign)
@@ -7,26 +19,22 @@ double	ft_atof(const char *str, double result, int sign)
 
 	decimal = 0;
 	power = 1;
-	while (isspace(*str))
+	while (*str == ' ' || *str == '\t' || *str == '\n')
 		str++;
 	if (*str == '+' || *str == '-')
 		sign = (*str++ == '-');
-	while (isdigit(*str))
+	while (*str <= '9' && *str >= '0')
 		result = result * 10 + (*str++ - '0');
 	if (*str == '.')
 	{
 		str++;
-		while (isdigit(*str))
-		{
+		while (*str <= '9' && *str >= '0' && (power *= 10))
 			result = result * 10 + (*str++ - '0');
-			power *= 10;
-		}
 		decimal = 1;
 	}
-	result *= sign;
 	if (decimal)
 		result /= power;
-	return (result);
+	return (result *= sign);
 }
 
 int	cmp(const char	*s1, const char	*s2, size_t	n)

@@ -1,9 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hmraizik <hmraizik@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/16 16:53:14 by hmraizik          #+#    #+#             */
+/*   Updated: 2024/05/16 19:43:25 by hmraizik         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 void	error(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
+}
+
+void	init_vars(t_fractal *fractal)
+{
+	fractal->x_shift = 0.0;
+	fractal->y_shift = 0.0;
+	fractal->iteration_definition = 100;
+	fractal->zoom = 1.0;
 }
 
 void	fractal_init(t_fractal *fractal)

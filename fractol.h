@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hmraizik <hmraizik@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/16 16:53:20 by hmraizik          #+#    #+#             */
+/*   Updated: 2024/05/16 19:53:20 by hmraizik         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
@@ -8,8 +20,8 @@
 # include <unistd.h>
 # include <ctype.h>
 
-# define WIDTH 800
-# define HEIGHT 800
+# define WIDTH 1000
+# define HEIGHT 1000
 //
 # define BLACK       0x000000  // RGB(0, 0, 0)
 # define WHITE       0xFFFFFF  // RGB(255, 255, 255)
@@ -64,5 +76,7 @@ t_complex	sum_complex(t_complex nb1, t_complex nb2);
 void		fractal_render(t_fractal *fractal);
 double		ft_atof(const char *str, double result, int sign);
 int			cmp(const char	*s1, const char	*s2, size_t	n);
+void		init_vars(t_fractal *fractal);
+int			ft_options(void);
 
 #endif
